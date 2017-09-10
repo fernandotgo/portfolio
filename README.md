@@ -1,3 +1,3 @@
-# Fernando Caceres's portfolio
+# Fernando Caceres portfolio
 
 This is my professional portfolio. It uses AWS and ReactJS
