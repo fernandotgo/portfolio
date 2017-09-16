@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Babel Demo</title>
+  </head>
+  <body>
+<main>
+  <div id="content">
+    <label><input id="name" type="text"></label>
+    
+    <script src="https://unpkg.com/babel-standalone/">
+
+    </script>
+    <script type="text/babel" data-presets="latest">
+      const getMessage = (name) => `Welcome to JS, $(name)`;
+      document.getElementById('content').textContent=getMessage("Fernando")
+    </script>
+  </div>
+</main>
+  </body>
+</html>
