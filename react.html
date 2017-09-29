@@ -75,6 +75,18 @@
     </script>
     <script type="text/babel" data-presets="react">
 
+      const assert = chai.assert;
+      assert.equal(5,3+2,"Math works!!!");
+      assert.notEqual(6,3+2,"Still works!");
+      assert.closeTo(Math.PI,3,.2,"PI is close to 3");
+
+      assert.isDefined(MessageBox,"Our MessageBox component is defined.");
+
+      let myName = "Fernando";
+      const greet = (name) => "Hello, " + name + "!";
+
+      assert.include(greet(myName), myName,"Greeting includes my name");
+
     </script>
   </body>
 </html>
