@@ -4,7 +4,7 @@
   "description": "My Portfolio",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest",
     "webpack": "webpack",
     "webpack-watch": "webpack --watch"
   },
@@ -19,14 +19,23 @@
   },
   "homepage": "https://github.com/fernandotgo/portfolio#readme",
   "dependencies": {
+    "async-limiter": "^1.0.0",
+    "cli-app": "^0.1.0",
     "local-web-server": "^2.2.4",
     "react": "^16.0.0",
     "react-dom": "^16.0.0"
   },
   "devDependencies": {
     "babel-core": "^6.26.0",
+    "babel-jest": "^21.2.0",
     "babel-loader": "^7.1.2",
+    "babel-preset-env": "^1.6.0",
     "babel-preset-react": "^6.24.1",
+    "enzyme": "^3.1.0",
+    "enzyme-adapter-react-16": "^1.0.1",
+    "jest": "^21.2.1",
+    "jest-cli": "^21.2.1",
+    "react-test-renderer": "^16.0.0",
     "webpack": "^3.6.0"
   }
 }
