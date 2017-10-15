@@ -1,5 +1,5 @@
-//import 'core-js/es6/map';
-//import 'core-js/es6/set';
+import 'core-js/es6/map';
+import 'core-js/es6/set';
 
 import React from 'react';
 import { shallow } from 'enzyme';
@@ -8,10 +8,10 @@ import ExampleWorkModal from '../js/example-work-modal';
 
 import Adapter from 'enzyme-adapter-react-16';
 configure( { adapter: new Adapter() } );
-/*
+
 global.requestAnimationFrame = function(callback) {
   setTimeout(callback, 0);
-};*/
+};
 
 const myExample = {
     'title':"Work Example",

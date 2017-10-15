@@ -77,9 +77,4 @@ describe("ExampleWorkBubble component", () => {
     expect(mockOpenModalFn).toHaveBeenCalled();
   });
 
-/*  it("Should call the closeModal handler when clicked",() =>{
-    component.find(".modal__closeButton").simulate('click');
-    expect(mockOpenModalFn).toHaveBeenCalled();
-  });*/
-
 });
