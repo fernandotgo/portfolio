@@ -6,6 +6,8 @@ console.log ("Webpack works fine");
 const myWork = [
   {
     'title':"Work Example",
+    'href':"https://example.com",
+    'desc':"A longer example description",
     'image': {
       'desc': "example screenshot of a project involving code",
       'src': "images/example1.png",
@@ -14,6 +16,8 @@ const myWork = [
   },
   {
     'title':"Portfolio Boilerplate",
+    'href': "https://example1.com/",
+    'desc': "More example text",
     'image': {
       'desc': "Server less portfolio",
       'src': "images/example2.png",
@@ -23,6 +27,8 @@ const myWork = [
   },
   {
     'title' :"Another example",
+    'href': "https://example2.com",
+    'desc': "A third example description",
     'image': {
       'desc': "example screenshot of a project involving cats",
       'src': "images/example3.png",
