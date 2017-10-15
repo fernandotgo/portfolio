@@ -1,11 +1,17 @@
+import 'core-js/es6/map';
+import 'core-js/es6/set';
+
 import React from 'react';
-
 import { shallow } from 'enzyme';
-import {configure} from 'enzyme';
-import Adapter from 'enzyme-adapter-react-16';
-import ExampleWork, {ExampleWorkBubble} from '../js/example-work';
-configure ({ adapter: new Adapter()});
+import { configure } from 'enzyme';
+import ExampleWork,{ ExampleWorkBubble } from '../js/example-work';
 
+import Adapter from 'enzyme-adapter-react-16';
+configure( { adapter: new Adapter() } );
+
+global.requestAnimationFrame = function(callback) {
+  setTimeout(callback, 0);
+};
 
 const myWork = [
   {
@@ -21,35 +27,36 @@ const myWork = [
     'image': {
       'desc': "Server less portfolio",
       'src': "images/example2.png",
-      'comment': ""
+      'comment': `“Chemistry” by Surian Soosay is licensed under CC BY 2.0
+       https://www.flickr.com/photos/ssoosay/4097410999`
     }
   }
 ];
 
 describe("ExampleWork component",() => {
-//Enzyme.configure({example: new ExampleWork()});
-  let component = shallow (<ExampleWork work={myWork}/>);
 
-    it("Should be a 'section' element", () => {
-      //console.log(component.debug());
-      expect(component.type()).toEqual('section');
-    });
+let component = shallow(<ExampleWork work={myWork}/>);
+  it("should be a 'section' element", () =>{
+    //expect("Hello").toEqual("Hello");
+    //console.log(component.debug());
+    expect(component.type()).toEqual('section');
+  });
 
-    it("Should contain as many children as there are work examples", () =>{
-      expect(component.find("ExampleWorkBubble").length).toEqual(myWork.length);
-    });
+  it("should contain as many children as there are work examples.", () =>{
+    expect(component.find("ExampleWorkBubble").length).toEqual(myWork.length);
+  })
 });
 
 describe("ExampleWorkBubble component", () => {
   let component = shallow (<ExampleWorkBubble example={myWork[1]}/>);
+
   let images = component.find("img");
 
-  it("Should contain a single 'img' element",() => {
+  it("should contain a single 'img' element", () => {
     expect(images.length).toEqual(1);
   });
 
-  it("Should have the simage src set correctly", () => {
-    //expect(images.node.props.src).toEqual(myWork[1].image.src);
+  it("Should have the image src set correctly",() => {
     expect(images.prop('src')).toEqual(myWork[1].image.src);
   });
 });
